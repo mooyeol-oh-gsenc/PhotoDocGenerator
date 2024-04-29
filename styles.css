@@ -1,0 +1,164 @@
+/* General styles and resets */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body, html {
+    font-family: 'Arial', sans-serif;
+    background-color: #f7f7f7;
+    color: #333;
+    line-height: 2;
+    height: 100%; /* Limit the height of the body to the viewport */
+    overflow-y: auto; /* Manage overflow to prevent extra scrolling */
+}
+
+header, footer {
+    text-align: center;
+    padding: 1rem 0;
+}
+
+main {
+    max-height: calc(100vh - 60px); /* Adjust height dynamically based on header/footer */
+    overflow-y: auto; /* Allows scrolling within the main content area only */
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+input[type="text"], input[type="date"], textarea {
+    width: 100%;
+    padding: 8px 10px; /* Unified padding */
+    margin-bottom: 10px; /* Uniform vertical spacing */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    height: 38px; /* Uniform height for all input elements */
+}
+
+textarea {
+    height: 38px; /* Adjusted height to match other inputs */
+    resize: none; /* Prevent resizing to maintain uniformity */
+}
+
+.button-group {
+    display: flex;
+    justify-content: space-between; /* This will put a space between the two buttons */
+    margin-bottom: 20px;
+}
+
+.btn {
+    flex: 1; /* Flex-grow to fill the space */
+    padding: 10px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 15px; /* Larger font for better readability */
+}
+
+.save {
+    background-color: #007BFF; /* Bright blue for primary action */
+    color: white;
+}
+
+.reset {
+    background-color: #6c757d; /* Desaturated color for less critical action */
+    color: white;
+    flex: 0.75; /* Smaller button */
+}
+
+.btn:hover {
+    opacity: 0.9; /* A subtle hover effect */
+}
+
+#upload-stats p {
+    color: #666;
+    font-size: 0.9em;
+    margin-top: 10px;
+}
+
+#report-preview {
+    border: 1px solid #ccc;
+    margin-top: 10px; /* Uniform vertical spacing */
+    padding: 10px;
+    background: #f9f9f9;
+    max-height: 300px; /* Example fixed height or could be a percentage of the viewport */
+    overflow-y: auto; /* Ensures internal scrolling */
+}
+
+#report-preview::-webkit-scrollbar {
+    width: 8px;
+}
+
+#report-preview::-webkit-scrollbar-thumb {
+    background-color: darkgrey;
+    border-radius: 10px;
+}
+
+#report-preview::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.fixed-bottom-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: white;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 10px 0;
+    z-index: 100;
+}
+
+.pdf-save-button {
+    margin: 0 auto;
+    margin-top: 5px;
+    display: block;
+    width: 90%; /* Responsive width */
+    max-width: 600px; /* Maximum button width */
+    background-color: #007BFF; /* Bright blue for primary action */
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 18px; /* Larger font size for better readability on mobile */
+    cursor: pointer;
+}
+
+.pdf-save-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+footer p {
+    font-size: 12px; /* Smaller font size for footer to be less obtrusive */
+    color: #666; /* Subdued color for less visual prominence */
+}
+
+@media (max-width: 768px) {
+    main {
+        width: 90%;
+        margin: 10px auto;
+    }
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+  
+table, th, td {
+    border: 1px solid black;
+}
+  
+.page-break {
+    width: 100%;
+    border-top: 2px dashed #ccc;
+    margin: 20px 0;
+}
+  
+h2 {
+    margin-top: 20px;
+}

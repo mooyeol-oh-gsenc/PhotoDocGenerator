@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Construction Photo Report</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- jsPDF for PDF generation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js" integrity="sha384-NaWTHo/8YCBYJ59830LTz/P4aQZK1sS0SneOgAvhsIl3zBu8r9RevNg5lHCHAuQ/" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <h1>사진대지 생성기</h1>
+    </header>
+    <main>
+        <section id="data-form">
+            <input type="text" id="location" placeholder="위치">
+            <input type="date" id="date" value="">
+            <textarea id="description" placeholder="활동내용"></textarea>
+            <div class="button-group">
+                <button onclick="saveData()" class="btn save">입력값 저장</button>
+                <button onclick="resetData()" class="btn reset">입력값 초기화</button>
+            </div>
+        </section>
+        <section id="photo-uploader">
+            <input type="file" id="photo-input" multiple accept="image/*" onchange="processPhotos()">
+            <div id="upload-stats">
+                <p>사진대지 페이지 수: <span id="page-count">0</span></p>
+            </div>
+        </section>
+        <section id="report-section">
+            <div id="report-preview" class="report-preview"></div>
+        </section>
+    </main>
+    <div class="fixed-bottom-container">
+        <button onclick="downloadPDF()" class="pdf-save-button">PDF로 저장하기</button>
+        <footer>
+            <p>&copy; 2024 사진대지 생성기 by BIM Team, GS E&C</p>
+        </footer>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
